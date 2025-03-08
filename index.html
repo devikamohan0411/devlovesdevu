@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary, Devu! ❤️</title>
+    
+    <!-- Google Font for a romantic feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    
+    <style>
+       body {
+        font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333;
+    padding: 20px;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    height: auto;
+    min-height: 100vh;
+}
+
+        
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s;
+        }
+        
+        h1 {
+            color: #e63946;
+            font-size: 32px;
+            font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+        }
+        
+        .reveal-button {
+            width: 100%;
+            height: 200px;
+            background: url('your-photo.jpg') no-repeat center center/cover;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .reveal-button::before {
+            content: "💖 Happy 2nd Anniversary 💖(tap me as fast as you can to reveal how much i love you)";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            transition: background 0.3s;
+        }
+        
+        .reveal-button:hover::before {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        /* Cute Pop-up Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffdde1;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.5s;
+    z-index: 1000;
+}
+
+.popup-content {
+    font-size: 22px;
+    color: #e63946;
+}
+
+/* Cute Button */
+.cute-button {
+    background: #ff758f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cute-button:hover {
+    background: #ff5c7a;
+}
+
+/* Background Fade Effect */
+#kissPopup::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    display: none;
+}
+
+
+        /* Hidden letter */
+        #letter {
+            display: none;
+            font-family: 'Cormorant Garamond', serif;
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 20px;
+            background: #fff0f3;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+    display: none;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+        /* Floating Hearts, Balloons & Confetti */
+        .floating {
+            position: absolute;
+            animation: floatUp 6s linear forwards;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            animation: confettiFall 3s linear forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-150vh) scale(1.5); opacity: 0; }
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Happy Anniversary, My Love! ❤️</h1>
+        <button class="reveal-button" onclick="showLetter()"></button>
+        <p id="letter">
+            Dear Devu, <br><br>
+            Deeevootyyyyy,
+Happy 2nd anniversary to us! Two whole years of love, laughter, and me wondering daily how I got so lucky. Honestly, at this point, I’m convinced you lost a bet with the universe and now you’re stuck with me. I cannot put into words how much I love you and care for you, I wish you could see yourself through my eyes just so that you can understand how fucking pretty and amazing of a person you are.
+I’ve spent two years falling for you in a million ways, and somehow, I keep falling more. Like Browning once wrote:
+"I love thee to the depth and breadth and height My soul can reach, when feeling out of sight."
+And that’s exactly how I love you—with everything in me, beyond what I even understand.
+From our first “unofficial” date at Leon’s Burgers to today, every single moment with you has been a beautiful mess of love and absolute madness. If someone told me that we would end up here after that trip to Leons, I wouldn’t be surprised at all and would not change a damn fucking thing about it.And I wouldn’t change a single thing. Even if you didn’t forget your bag that day we would still be here in each others arms loving each other more than ever.
+From there to travelling in KSRTC going home, to you sleeping on my shoulders then to me putting the whole world aside and resting on your shoulders now, no matter how difficult it was, you were always there for me.  No matter where we are, no matter what’s happening around us, you are my whole world.
+And oh, the laughter we share! You make my life feel like a never-ending comedy show—except the kind where the lead actress is also the cutest, most lovable person in the world. No one makes me laugh like you do. From your random giggles at 2 AM to those moments when you laugh so hard you literally fart all the fucking time (you are my gas vaava) , you have this magical ability to turn even the worst days into something beautiful and have the ability to make my day better no matter how shitty it is going or just to make the world more bearable whenever you are there.
+But it’s not just the laughter—it’s everything. The way you take care of me when I pretend I’m dying over a tiny cold. The way you somehow always know when I need a hug. The way you make life feel lighter, easier, and so full of love.The way you make me feel like a lil kid again yearning for my moms love, You’re not just my girlfriend—you’re my best friend, my safe place, the nest person that ever happened to me, my second mom and my greatest adventure. I love how fucking excited I get whenever you ask me some questions and I go back to being a lil boy explain gin things to you and you wholeheartedly listen to me no matter how boring it is. aaarghghgashjgfsf I can’t fucking express how much I love you dev. YOU ARE MY EVERY FUCKING THING AND MY WHOLE FUCKING WORLD. <br><br>
+            
+            <!-- Pause Section: Cute Pop-up Appears -->
+            <span id="pauseMessage">
+                💖 "To continue reading, give two kisses to Dev!" 😘😘 <br><br>
+                <button class="cute-button" onclick="showKissPopup()">Done</button>
+            </span>
+        
+            <!-- Rest of the Letter (Hidden Initially) -->
+            <span id="remainingLetter" style="display: none;">
+                <br><br> And of course, we’ve had our fights. Some small, some big, some where I had no clue what I did wrong—but I still apologized because I value my survival (illel I know you would kill me in an instant hehe). I was always stubborn and stick to my points but I changed all that for us just to try and be the perfect man I can be for you. And every time, we’ve come back stronger, because loving you is never a question, never a doubt. It’s the easiest, most certain thing in my life and I know for certain that this is my forever love and that you are my soul mate. And I am ready to try changing more just to be perfect for you, I know I can be an asshole at times with my memoryy issues and all but please trust me that I am trying my best and will keep on trying and put efforts for us and for our relationship. 
+                Thinking about our future together makes me ridiculously excited. I see us traveling, eating way too much food, adopting a small army of dogs, and maybe (if we’re feeling brave) raising some tiny humans who will undoubtedly inherit your ability to win every argument. No matter what happens, I know this—I want all of it, with you and only you.
+                And I have to be honest—sometimes, I get scared. Scared of a future where you have to face this world without me. Because the truth is, if I could, I’d choose you in every lifetime, in every possible version of this universe. You mean everything to me, and my only wish is that you’re always, always happy. I remember you telling me the boys used to impress you using milky bar, so I am going to give you milky bars whenever to remind you that I am never gonna stop trying to impress you and none of the other boys are ever getting even a bit of you. My achu also used to love milky bar candies cause that  was the only thing she could eat with her non existent teeth, you remind me of her and god I miss her and I feel like you also inherit her the way you show so much love to me. Oh my you remind me go my Amma and my achu the way they used to take care of me and love me unconditionally, I cannot fucking imagine a world without you and I know for a fact that I won’t have to cause I know that you are going to be there for me every step of the the way till the end of time.
+                So here’s to two incredible years, and to a lifetime (and after death) of love, laughter, and me making fun of you in every moment I get. I love you more than words can ever say—and if I start saying it too much, feel free to bribe me with food to stop.
+                Forever and always devoooootyyyyy,
+                Your swantham Dev
+                 <br><br>
+                Love you forever! ❤️
+            </span>
+        </p>
+        
+        <!-- Custom Pop-up -->
+        <div id="kissPopup" class="popup">
+            <div class="popup-content">
+                <p id="popupText">To continue, give two kisses to Dev! 😘😘</p>
+                <button class="cute-button" onclick="nextKissStep()">Done</button>
+            </div>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="photo-gallery" id="photoGallery">
+            <img src="IMG_0578.jpg" alt="Photo 1">
+            <img src="IMG_0969.jpg" alt="Photo 2">
+            <img src="IMG_0989.jpg" alt="Photo 3">
+            <img src="IMG_1918.jpg" alt="Photo 4">
+            <img src="IMG_5625.jpg" alt="Photo 5">
+            <img src="IMG_8227.jpg" alt="Photo 6">
+        </div>
+    </div>
+
+    <script>
+        function showLetter() {
+            document.getElementById("letter").style.display = "block";
+            document.getElementById("photoGallery").style.display = "grid";
+            createFloatingEffects();
+            createConfetti();
+        }
+
+
+        function createFloatingEffects() {
+            const emojis = ["🎈", "🎈", "❤️", "💖", "💘", "💝", "💞", "💕"];
+            
+            for (let i = 0; i < 100; i++) { // 100+ balloons & hearts!
+                let floatingEmoji = document.createElement("div");
+                floatingEmoji.classList.add("floating");
+                floatingEmoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                floatingEmoji.style.left = Math.random() * 100 + "vw";
+                floatingEmoji.style.bottom = "-50px";
+                floatingEmoji.style.fontSize = (Math.random() * 20 + 20) + "px";
+                floatingEmoji.style.animationDuration = (Math.random() * 4 + 2) + "s";
+                floatingEmoji.style.position = "fixed";
+
+                document.body.appendChild(floatingEmoji);
+
+                setTimeout(() => {
+                    floatingEmoji.remove();
+                }, 6000);
+            }
+        }
+        let kissStep = 1;
+
+function showKissPopup() {
+    document.getElementById("kissPopup").style.display = "block";
+}
+
+function nextKissStep() {
+    let popupText = document.getElementById("popupText");
+
+    if (kissStep === 1) {
+        popupText.innerHTML = "Oops! Two more kisses needed! 😜";
+        kissStep++;
+    } else {
+        document.getElementById("kissPopup").style.display = "none";
+        document.getElementById("pauseMessage").style.display = "none";
+        document.getElementById("remainingLetter").style.display = "inline";
+    }
+}
+
+
+        function createConfetti() {
+            const colors = ["red", "blue", "yellow", "green", "pink", "purple", "orange"];
+            
+            for (let i = 0; i < 100; i++) { // 100+ confetti!
+                let confettiPiece = document.createElement("div");
+                confettiPiece.classList.add("confetti");
+                confettiPiece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confettiPiece.style.left = Math.random() * 100 + "vw";
+                confettiPiece.style.top = "-10px";
+                confettiPiece.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                confettiPiece.style.position = "fixed";
+
+                document.body.appendChild(confettiPiece);
+
+                setTimeout(() => {
+                    confettiPiece.remove();
+                }, 3000);
+            }
+        }
+    </script>
+
+</body>
+</html>
