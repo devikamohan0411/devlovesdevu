@@ -197,7 +197,11 @@
     </style>
 </head>
 <body>
-
+    <audio id="backgroundMusic" loop>
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
     <div class="container">
         <h1>Happy Anniversary, My Love! ❤️</h1>
         <button class="reveal-button" onclick="showLetter()"></button>
@@ -253,11 +257,17 @@ But it’s not just the laughter—it’s everything. The way you take care of m
 
     <script>
         function showLetter() {
-            document.getElementById("letter").style.display = "block";
-            document.getElementById("photoGallery").style.display = "grid";
-            createFloatingEffects();
-            createConfetti();
-        }
+    document.getElementById("letter").style.display = "block";
+    document.getElementById("photoGallery").style.display = "grid";
+    createFloatingEffects();
+    createConfetti();
+    
+    // Play background music
+    let music = document.getElementById("backgroundMusic");
+    music.volume = 0.5; // Set volume (adjust as needed)
+    music.play();
+}
+
 
 
         function createFloatingEffects() {
